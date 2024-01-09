@@ -1,6 +1,6 @@
-
+// Implement the built-in Readonly<T> generic without using it.
 type MyReadonly<Object> ={
-    readonly [key in keyof Object]: Object[key] // key in keyof Object = 'title' | 'description'
+    readonly [key in keyof Object]: Object[key] // keyof Object = 'title' | 'description',  key in keyof Object = 'title' | 'description'
 }
 
 interface Article {
