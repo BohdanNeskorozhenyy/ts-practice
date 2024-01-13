@@ -5,9 +5,12 @@ type TupleToObject<P extends readonly any[]> = {
     [key in P[number]]: P[number] // key in P[number] = 'tesla' | 'model 3' | 'model X' | 'model Y'
 }
 
-const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const
+const carsArr = ['tesla', 'model 3', 'model X', 'model Y'] as const
 
-type result = TupleToObject<typeof tuple> // expected { 'tesla': 'tesla', 'model 3': 'model 3', 'model X': 'model X', 'model Y': 'model Y'}
+type Cars = TupleToObject<typeof carsArr> // expected { 'tesla': 'tesla', 'model 3': 'model 3', 'model X': 'model X', 'model Y': 'model Y'}
 
-
-type test = typeof tuple
+const carsObj: Cars = {
+    'model 3': 'model 3',
+    'model X': 'model X',
+    'model Y': 'model Y'
+} // expected error Property 'tesla' is missing in type
