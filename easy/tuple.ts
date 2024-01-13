@@ -1,4 +1,4 @@
-// Given an array, transform it into an object type and the key/value must be in the provided array.
+// Given an array, transform it into an object type and the key/value must be in the provided array
 
 
 type TupleToObject<P extends readonly any[]> = {
