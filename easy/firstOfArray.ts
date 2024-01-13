@@ -1,3 +1,5 @@
+// Implement a generic First<T> that takes an Array T and returns its first element's type.
+
 type First<arr extends any[]> = arr extends [] ? never : arr[0]
 
 type arr1 = ['a', 'b', 'c']
